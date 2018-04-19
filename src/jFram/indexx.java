@@ -1,11 +1,12 @@
 
 package jFram;
-
+import Code.ConnectDB;
 
 public class indexx extends javax.swing.JFrame {
-
+   
     public indexx() {
         initComponents();
+        ConnectDB.connectDB();
     }
 
    
