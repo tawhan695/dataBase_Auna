@@ -1,14 +1,3 @@
-
-package Code;
-
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
 /*
 
      try {
@@ -21,21 +10,7 @@ import javax.swing.JOptionPane;
         } catch (Exception e) {
         }
 */
-
-public class ConnectDB {
-
-    
- public static Connection connectDB(){
- 
-        try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-           Connection  connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:tawhan", "tawhan as SYSDBA","695");
-           
-            if (connection !=null) {
-                System.out.println("เชื่อต่อเรียบร้อย "+connection.getSchema());
-              
-            }else System.out.println("not connection");
-             
+   
             //เพิ่มเข้าในตาราง
            /* ********************************************************************
             Statement sm=connection.createStatement();
@@ -67,16 +42,42 @@ public class ConnectDB {
            /*
           
            */
+package Code;
+
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
+
+public class ConnectDB {
+
+    
+ public static Connection connectDB(){
+ 
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+           Connection  connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:tawhan", "tawhan as SYSDBA","695");
+           
+            if (connection !=null) {
+                System.out.println("เชื่อต่อเรียบร้อย "+connection.getSchema());
+              
+            }else System.out.println("not connection");
+          
         } catch (Exception e) {
             System.out.println("ERROR "+e);
         }
        return null;
     }
   
-  /* 
+  
 
     public static void main(String[] args) {
    
 connectDB();
-} */
+} 
 }
